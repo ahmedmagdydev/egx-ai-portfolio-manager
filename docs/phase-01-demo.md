@@ -17,3 +17,7 @@ Expected response shape:
 ```
 
 The mock provider is deterministic and is not live market data.
+
+## Thin UI
+
+Open the minimal portfolio interface at [http://127.0.0.1:3000/portfolio?lang=ar](http://127.0.0.1:3000/portfolio?lang=ar), or use `?lang=en` for English. Enter the fixture through the **Add stock** and **Add transaction** forms, then refresh the data after each submission. The UI should show the same golden numbers: COMI quantity `150`, average cost `55.2750`, total cost `8291.25`, cash `87565.00`, realized P&L `866.25`, and an unavailable HRHO price.
