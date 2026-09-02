@@ -1,0 +1,15 @@
+{
+  "stocks": [
+    {"symbol": "COMI", "name_en": "Commercial International Bank", "sector": "Banks"},
+    {"symbol": "HRHO", "name_en": "EFG Holding", "sector": "Financial Services"}
+  ],
+  "transactions": [
+    {"type": "DEPOSIT", "amount": "100000", "executed_at": "2025-01-01T09:00:00+00:00"},
+    {"type": "BUY", "symbol": "COMI", "quantity": "100", "price": "50", "fees": "25", "executed_at": "2025-01-02T09:00:00+00:00"},
+    {"type": "BUY", "symbol": "COMI", "quantity": "100", "price": "60", "fees": "30", "executed_at": "2025-01-03T09:00:00+00:00"},
+    {"type": "SELL", "symbol": "COMI", "quantity": "50", "price": "70", "fees": "20", "executed_at": "2025-01-04T09:00:00+00:00"},
+    {"type": "BUY", "symbol": "HRHO", "quantity": "200", "price": "20", "fees": "10", "executed_at": "2025-01-05T09:00:00+00:00"},
+    {"type": "DIVIDEND", "symbol": "COMI", "amount": "150", "executed_at": "2025-01-06T09:00:00+00:00"},
+    {"type": "WITHDRAWAL", "amount": "1000", "executed_at": "2025-01-07T09:00:00+00:00"}
+  ]
+}

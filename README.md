@@ -6,7 +6,7 @@ A local-first, single-user investment research and portfolio decision-support ap
 
 ## Status
 
-The repository is in **Phase 00 — local bootstrap**. The FastAPI and Next.js shells, local PostgreSQL/pgvector service, health contracts, migrations, and baseline verification are scaffolded. Product features, business tables, and LLM integration are intentionally deferred. The original product brief is preserved unchanged in [`EGX_AI_Portfolio_Manager_Implementation_Guide.md`](EGX_AI_Portfolio_Manager_Implementation_Guide.md).
+The repository is in **Phase 01 — deterministic portfolio core**. The local FastAPI service now includes Decimal-safe portfolio accounting, PostgreSQL portfolio tables, a deterministic mock quote provider, and portfolio APIs. LLM integration, live market data, and the full dashboard remain deferred. The original product brief is preserved unchanged in [`EGX_AI_Portfolio_Manager_Implementation_Guide.md`](EGX_AI_Portfolio_Manager_Implementation_Guide.md).
 
 The initial operating assumptions are:
 

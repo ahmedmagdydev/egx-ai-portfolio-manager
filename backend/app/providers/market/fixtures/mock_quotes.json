@@ -1,0 +1,27 @@
+{
+  "COMI": {
+    "price": "72.5000",
+    "currency": "EGP",
+    "source": "mock",
+    "observed_at": "2025-01-15T12:00:00Z"
+  },
+  "HRHO": {
+    "available": false,
+    "price": "21.2500",
+    "currency": "EGP",
+    "source": "mock",
+    "observed_at": "2025-01-15T12:00:00Z"
+  },
+  "ETEL": {
+    "price": "38.0000",
+    "currency": "EGP",
+    "source": "mock",
+    "observed_at": "2025-01-15T12:00:00Z"
+  },
+  "SWDY": {
+    "price": "60.0000",
+    "currency": "EGP",
+    "source": "mock",
+    "observed_at": "2025-01-15T12:00:00Z"
+  }
+}

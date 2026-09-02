@@ -25,6 +25,8 @@ class Settings(BaseSettings):
     frontend_port: int = 3000
     log_level: str = "INFO"
     health_timeout_seconds: int = 2
+    quote_stale_after_seconds: int = 86400
+    market_data_provider: str = "mock"
     ollama_base_url: str = "http://127.0.0.1:11434"
     ollama_reasoning_model: str = "qwen3.5:9b"
     ollama_embedding_model: str = "qwen3-embedding:4b-q4_K_M"
