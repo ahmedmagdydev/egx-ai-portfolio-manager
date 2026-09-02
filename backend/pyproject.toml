@@ -1,0 +1,39 @@
+[project]
+name = "egx-ai-portfolio-manager-api"
+version = "0.0.1"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "fastapi==0.115.12",
+  "uvicorn[standard]==0.34.2",
+  "sqlalchemy==2.0.40",
+  "psycopg[binary]==3.2.9",
+  "alembic==1.15.2",
+  "pydantic-settings==2.9.1",
+  "httpx==0.28.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.5",
+  "ruff==0.11.10",
+  "mypy==1.15.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B008"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["app"]
+
+[tool.pytest.ini_options]
+addopts = '-m "not integration"'
+markers = [
+  "integration: tests requiring the running PostgreSQL compose service",
+]

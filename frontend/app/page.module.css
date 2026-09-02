@@ -1,0 +1,12 @@
+.page { min-height: 100vh; padding: 5rem 1.5rem; background: #f4f7fb; }
+.card { max-width: 760px; margin: 0 auto; padding: 2.5rem; border: 1px solid #d8e0eb; border-radius: 1rem; background: #fff; box-shadow: 0 1rem 3rem rgb(23 44 79 / 10%); }
+.eyebrow { margin-bottom: .75rem; color: #1b63b8; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.card h1 { margin-bottom: .75rem; color: #10233f; font-size: clamp(2rem, 5vw, 3.5rem); }
+.intro { color: #52647d; }
+.status { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.status div { padding: 1rem; border-radius: .6rem; background: #eef4fb; }
+.status dt { color: #52647d; font-size: .8rem; text-transform: uppercase; }
+.status dd { margin-top: .35rem; color: #10233f; font-weight: 700; overflow-wrap: anywhere; }
+.card h2 { margin-bottom: .75rem; color: #10233f; }
+.card pre { padding: 1rem; overflow-x: auto; border-radius: .6rem; background: #10233f; color: #dcecff; }
+.unavailable { margin: 2rem 0 .5rem; color: #b3261e; font-size: 1.5rem; font-weight: 700; }
