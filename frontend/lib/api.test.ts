@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ApiError, fetchLiveness, getHoldings } from "./api";
+import { ApiError, fetchLiveness, getHoldings, isApiUnavailable } from "./api";
 
 describe("fetchLiveness", () => {
   it("returns the API health response", async () => {
@@ -44,10 +44,22 @@ describe("fetchLiveness", () => {
         message: "Insufficient cash",
         details: { held: "1.00" },
       }), { status: 422 });
-    await expect(getHoldings(fetchImpl as typeof fetch)).rejects.toMatchObject({
+    const result = getHoldings(fetchImpl as typeof fetch);
+    await expect(result).rejects.toMatchObject({
       name: "ApiError",
       code: "INSUFFICIENT_CASH",
       message: "Insufficient cash",
     } satisfies Partial<ApiError>);
+    await expect(result.catch((error: unknown) => isApiUnavailable(error))).resolves.toBe(false);
+  });
+
+  it("recognizes a non-JSON server failure as API unavailable", async () => {
+    const fetchImpl = async () => new Response("<html>offline</html>", {
+      status: 500,
+      headers: { "Content-Type": "text/html" },
+    });
+    const result = getHoldings(fetchImpl as typeof fetch);
+    await expect(result).rejects.toMatchObject({ code: "HTTP_ERROR", status: 500 });
+    await expect(result.catch((error: unknown) => isApiUnavailable(error))).resolves.toBe(true);
   });
 });

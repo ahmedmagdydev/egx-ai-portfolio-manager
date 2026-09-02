@@ -119,13 +119,24 @@ export type ApiErrorBody = {
 export class ApiError extends Error {
   code: string;
   details: Record<string, unknown> | null;
+  status: number;
 
-  constructor(code: string, message: string, details: Record<string, unknown> | null = null) {
+  constructor(
+    code: string,
+    message: string,
+    details: Record<string, unknown> | null = null,
+    status = 0,
+  ) {
     super(message);
     this.name = "ApiError";
     this.code = code;
     this.details = details;
+    this.status = status;
   }
+}
+
+export function isApiUnavailable(error: unknown): boolean {
+  return !(error instanceof ApiError) || error.status >= 500 || error.code === "HTTP_ERROR";
 }
 
 export function getApiBaseUrl(): string {
@@ -148,6 +159,7 @@ async function requestJson<T>(
       body.code || "HTTP_ERROR",
       body.message || `API request failed: ${response.status}`,
       body.details || null,
+      response.status,
     );
   }
   return body as T;

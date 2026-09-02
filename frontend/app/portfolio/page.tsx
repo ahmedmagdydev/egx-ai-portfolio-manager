@@ -14,6 +14,7 @@ import {
   createTransaction,
   getAllocation,
   getHoldings,
+  isApiUnavailable,
   listStocks,
   listTransactions,
 } from "@/lib/api";
@@ -83,7 +84,7 @@ export default function PortfolioPage() {
       setTransactions(transactionData);
       setNetworkError(false);
     } catch (error) {
-      setNetworkError(!(error instanceof ApiError));
+      setNetworkError(isApiUnavailable(error));
       setFormError(errorMessage(error));
     } finally {
       setLoading(false);
@@ -97,6 +98,11 @@ export default function PortfolioPage() {
   useEffect(() => {
     setLocale(normalizeLocale(new URLSearchParams(window.location.search).get("lang") || "en"));
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    document.documentElement.dir = direction(locale);
+  }, [locale]);
 
   async function submitStock(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
