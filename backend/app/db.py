@@ -1,6 +1,5 @@
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from typing import Any
 
 from fastapi import FastAPI, Request
 from sqlalchemy import Engine, create_engine
@@ -30,6 +29,3 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     finally:
         engine.dispose()
 
-
-def execute_scalar(connection: Any, statement: Any, **parameters: Any) -> Any:
-    return connection.execute(statement, parameters).scalar()

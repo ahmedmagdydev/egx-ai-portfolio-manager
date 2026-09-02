@@ -110,7 +110,6 @@ async def ollama(response: Response, settings: Settings = Depends(get_settings))
         }
         return HealthResponse(status="ok", checks=checks, timestamp=utc_now())
     except (httpx.HTTPError, ValueError, TypeError):
-        # The response intentionally does not expose connection details.
         response.status_code = 503
         return HealthResponse(
             status="degraded",
