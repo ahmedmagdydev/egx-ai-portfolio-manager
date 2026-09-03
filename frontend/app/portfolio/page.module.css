@@ -30,5 +30,8 @@
 .formError, .alert { padding: 1rem; border: 1px solid #f0b8b3; border-radius: .6rem; color: #8b1e16; background: #fff1f0; }
 .alert h1 { margin-bottom: .5rem; }
 .loading { color: #52647d; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+.list li { padding: .75rem; border-radius: .5rem; background: #fff7ed; border: 1px solid #fed7aa; }
+.list li p { margin: .25rem 0 0; font-size: .85rem; }
 @media (max-width: 900px) { .summaryGrid { grid-template-columns: repeat(3, 1fr); } .forms { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .shell { width: min(100% - 1rem, 1180px); } .titleRow { display: block; } .asOf { margin-top: .75rem; } .summaryGrid { grid-template-columns: repeat(2, 1fr); } .section { padding: .9rem; } }

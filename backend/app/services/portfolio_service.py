@@ -2,6 +2,7 @@ from collections.abc import Iterable
 from datetime import datetime
 from decimal import Decimal
 
+from fastapi import HTTPException
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, joinedload
 
@@ -123,6 +124,78 @@ def add_transaction(
     session.add(result)
     session.flush()
     return result
+
+
+def get_transaction(session: Session, transaction_id: str) -> Transaction | None:
+    return session.scalar(
+        select(Transaction)
+        .options(joinedload(Transaction.stock))
+        .where(Transaction.id == transaction_id)
+    )
+
+
+def update_transaction(
+    session: Session,
+    transaction_id: str,
+    *,
+    transaction_type: TransactionType,
+    symbol: str | None,
+    quantity: Decimal | None,
+    price: Decimal | None,
+    fees: Decimal,
+    amount: Decimal | None,
+    executed_at: datetime,
+    note: str | None,
+) -> Transaction:
+    row = get_transaction(session, transaction_id)
+    if row is None:
+        raise HTTPException(
+            status_code=404,
+            detail={"code": "TRANSACTION_NOT_FOUND", "message": "Transaction not found"},
+        )
+    stock = None
+    if symbol is not None:
+        stock = session.scalar(select(Stock).where(Stock.symbol == symbol.upper()))
+        if stock is None:
+            raise UnknownStockError(symbol)
+    if transaction_type in {TransactionType.BUY, TransactionType.SELL, TransactionType.DIVIDEND}:
+        if stock is None:
+            raise InvalidTransactionError("BUY, SELL, and DIVIDEND transactions require a symbol")
+    elif symbol is not None:
+        raise InvalidTransactionError("Cash transactions cannot have a symbol")
+    if transaction_type in {TransactionType.BUY, TransactionType.SELL} and (
+        quantity is None or price is None
+    ):
+        raise InvalidTransactionError(
+            "BUY and SELL transactions require quantity and price"
+        )
+    if transaction_type in {
+        TransactionType.DEPOSIT,
+        TransactionType.WITHDRAWAL,
+        TransactionType.DIVIDEND,
+    } and amount is None:
+        raise InvalidTransactionError("Cash transactions require amount")
+    row.stock_id = stock.id if stock else None
+    row.type = transaction_type
+    row.quantity = quantity
+    row.price = price
+    row.fees = fees
+    row.amount = amount
+    row.executed_at = executed_at
+    row.note = note
+    session.flush()
+    return row
+
+
+def delete_transaction(session: Session, transaction_id: str) -> None:
+    row = get_transaction(session, transaction_id)
+    if row is None:
+        raise HTTPException(
+            status_code=404,
+            detail={"code": "TRANSACTION_NOT_FOUND", "message": "Transaction not found"},
+        )
+    session.delete(row)
+    session.flush()
 
 
 def count_transactions(session: Session, symbol: str | None = None) -> int:

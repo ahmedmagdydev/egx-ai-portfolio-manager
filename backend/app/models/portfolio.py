@@ -1,6 +1,9 @@
+from __future__ import annotations
+
 from datetime import datetime
 from decimal import Decimal
 from enum import Enum
+from typing import TYPE_CHECKING
 from uuid import UUID
 
 from sqlalchemy import (
@@ -20,6 +23,11 @@ from sqlalchemy import Enum as SAEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampMixin, UUIDPrimaryKeyMixin
+
+if TYPE_CHECKING:
+    from .documents import Document
+    from .financial import FinancialStatement
+    from .market_data import StockPrice
 
 
 class TransactionType(str, Enum):
@@ -55,8 +63,11 @@ class Stock(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     currency: Mapped[str] = mapped_column(String(3), default="EGP", nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
 
-    transactions: Mapped[list["Transaction"]] = relationship(back_populates="stock")
-    price_snapshots: Mapped[list["PriceSnapshot"]] = relationship(back_populates="stock")
+    transactions: Mapped[list[Transaction]] = relationship(back_populates="stock")
+    price_snapshots: Mapped[list[PriceSnapshot]] = relationship(back_populates="stock")
+    stock_prices: Mapped[list[StockPrice]] = relationship(back_populates="stock")
+    financial_statements: Mapped[list[FinancialStatement]] = relationship(back_populates="stock")
+    documents: Mapped[list[Document]] = relationship(back_populates="stock")
 
 
 class Transaction(UUIDPrimaryKeyMixin, TimestampMixin, Base):

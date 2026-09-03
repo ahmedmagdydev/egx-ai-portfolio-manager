@@ -38,6 +38,8 @@ from ..services.portfolio_service import (
     add_transaction,
     count_transactions,
     current_events,
+    delete_transaction,
+    update_transaction,
 )
 
 router = APIRouter(prefix="/portfolio", tags=["portfolio"])
@@ -164,6 +166,49 @@ def create_transaction(
         if row.stock is None and row.stock_id is not None:
             session.refresh(row, attribute_names=["stock"])
         return transaction_response(row, generated_at)
+    except Exception:
+        session.rollback()
+        raise
+
+
+@router.put("/transactions/{transaction_id}", response_model=TransactionResponse)
+def update_transaction_endpoint(
+    transaction_id: str,
+    body: TransactionCreate,
+    session: Session = Depends(get_session),
+) -> TransactionResponse:
+    generated_at = now_utc()
+    try:
+        row = update_transaction(
+            session,
+            transaction_id,
+            transaction_type=body.type,
+            symbol=body.symbol,
+            quantity=body.quantity,
+            price=body.price,
+            fees=body.fees,
+            amount=body.amount,
+            executed_at=body.executed_at,
+            note=body.note,
+        )
+        session.commit()
+        session.refresh(row)
+        if row.stock is None and row.stock_id is not None:
+            session.refresh(row, attribute_names=["stock"])
+        return transaction_response(row, generated_at)
+    except Exception:
+        session.rollback()
+        raise
+
+
+@router.delete("/transactions/{transaction_id}", status_code=204)
+def delete_transaction_endpoint(
+    transaction_id: str,
+    session: Session = Depends(get_session),
+) -> None:
+    try:
+        delete_transaction(session, transaction_id)
+        session.commit()
     except Exception:
         session.rollback()
         raise

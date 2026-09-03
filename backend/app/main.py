@@ -5,10 +5,19 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
 
 from . import __version__
+from .api.ai import router as ai_router
+from .api.analysis import router as analysis_router
+from .api.documents import router as documents_router
+from .api.financial import router as financial_router
+from .api.market_data import router as market_data_router
 from .api.portfolio import router as portfolio_router
+from .api.risk import router as risk_router
+from .api.settings import router as settings_router
+from .api.technical import router as technical_router
 from .config import Settings
 from .db import lifespan
 from .domain.portfolio import PortfolioError
@@ -45,8 +54,23 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     )
     app.state.settings = app_settings
     app.add_middleware(CorrelationIdMiddleware)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=False,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     app.include_router(health_router)
     app.include_router(portfolio_router)
+    app.include_router(market_data_router)
+    app.include_router(financial_router)
+    app.include_router(technical_router)
+    app.include_router(documents_router)
+    app.include_router(ai_router)
+    app.include_router(analysis_router)
+    app.include_router(risk_router)
+    app.include_router(settings_router)
 
     @app.exception_handler(PortfolioError)
     async def portfolio_error_handler(_: Request, exc: PortfolioError) -> JSONResponse:

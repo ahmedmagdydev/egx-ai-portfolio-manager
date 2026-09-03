@@ -1,43 +1,53 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { direction } from "@/lib/locale";
+import { normalizeLocale, t } from "@/lib/i18n";
 import styles from "./page.module.css";
-import { fetchHealth } from "@/lib/api";
 
-export const dynamic = "force-dynamic";
+const nav = [
+  { href: "/portfolio", key: "Holdings" },
+  { href: "/risk", key: "Risk" },
+  { href: "/analysis", key: "Analysis" },
+  { href: "/settings", key: "Settings" },
+];
 
-export default async function Home() {
-  try {
-    const [live, ready] = await Promise.all([
-      fetchHealth("/health/live"),
-      fetchHealth("/health/ready"),
-    ]);
-    return (
-      <main className={styles.page}>
-        <section className={styles.card}>
-          <p className={styles.eyebrow}>Phase 00 · Local bootstrap</p>
-          <h1>EGX AI Portfolio Manager</h1>
-          <p className={styles.intro}>API status is available from the local FastAPI service.</p>
-          <p><a href="/portfolio?lang=en">Open portfolio</a></p>
-          <dl className={styles.status}>
-            <div><dt>Status</dt><dd>{live.status}</dd></div>
-            <div><dt>Service</dt><dd>{live.service}</dd></div>
-            <div><dt>Version</dt><dd>{live.version}</dd></div>
-            <div><dt>Timestamp</dt><dd>{live.timestamp}</dd></div>
-            <div><dt>Readiness</dt><dd>{ready.status}</dd></div>
-          </dl>
-          <h2>Checks</h2>
-          <pre>{JSON.stringify(ready.checks, null, 2)}</pre>
-        </section>
-      </main>
+export default function Home() {
+  const [locale, setLocale] = useState<"en" | "ar">("en");
+
+  useEffect(() => {
+    setLocale(
+      normalizeLocale(
+        new URLSearchParams(window.location.search).get("lang") || "en",
+      ),
     );
-  } catch {
-    return (
-      <main className={styles.page}>
-        <section className={styles.card} role="alert">
-          <p className={styles.eyebrow}>Phase 00 · Local bootstrap</p>
-          <h1>EGX AI Portfolio Manager</h1>
-          <p className={styles.unavailable}>API unavailable</p>
-          <p className={styles.intro}>Start the backend with <code>make backend</code> and refresh.</p>
-        </section>
-      </main>
-    );
-  }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    document.documentElement.dir = direction(locale);
+  }, [locale]);
+
+  const label = (key: string) => t(locale, key);
+
+  return (
+    <main className={styles.page} lang={locale} dir={direction(locale)}>
+      <div className={styles.shell}>
+        <h1>EGX AI Portfolio Manager</h1>
+        <p>{label("Dashboard")}</p>
+        <nav className={styles.nav}>
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={`${item.href}?lang=${locale}`}
+              className={styles.card}
+            >
+              {label(item.key)}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </main>
+  );
 }

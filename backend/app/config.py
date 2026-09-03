@@ -27,6 +27,12 @@ class Settings(BaseSettings):
     health_timeout_seconds: int = 2
     quote_stale_after_seconds: int = 86400
     market_data_provider: str = "mock"
+    oanor_api_key: str | None = None
+    oanor_base_url: str = "https://api.oanor.com"
+    oanor_history_symbol_suffix: str = ".CA"
+    embedding_provider: str = "fake"
+    embedding_dimension: int = 2560
+    llm_provider: str = "fake"
     ollama_base_url: str = "http://127.0.0.1:11434"
     ollama_reasoning_model: str = "qwen3.5:9b"
     ollama_embedding_model: str = "qwen3-embedding:4b-q4_K_M"

@@ -1,27 +1,2621 @@
 {
-  "COMI": {
-    "price": "72.5000",
-    "currency": "EGP",
-    "source": "mock",
-    "observed_at": "2025-01-15T12:00:00Z"
+  "quotes": {
+    "COMI": {
+      "price": "72.5000",
+      "currency": "EGP",
+      "source": "mock",
+      "observed_at": "2025-01-15T12:00:00Z"
+    },
+    "HRHO": {
+      "available": false,
+      "price": "21.2500",
+      "currency": "EGP",
+      "source": "mock",
+      "observed_at": "2025-01-15T12:00:00Z"
+    },
+    "ETEL": {
+      "price": "38.0000",
+      "currency": "EGP",
+      "source": "mock",
+      "observed_at": "2025-01-15T12:00:00Z"
+    },
+    "SWDY": {
+      "price": "60.0000",
+      "currency": "EGP",
+      "source": "mock",
+      "observed_at": "2025-01-15T12:00:00Z"
+    }
   },
-  "HRHO": {
-    "available": false,
-    "price": "21.2500",
-    "currency": "EGP",
-    "source": "mock",
-    "observed_at": "2025-01-15T12:00:00Z"
+  "bars": {
+    "COMI": [
+      {
+        "timestamp": "2025-01-13T10:00:00Z",
+        "open": "71.0000",
+        "high": "72.9000",
+        "low": "70.8000",
+        "close": "72.5000",
+        "volume": 125000,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2025-01-14T10:00:00Z",
+        "open": "72.5000",
+        "high": "73.1000",
+        "low": "72.2000",
+        "close": "72.8000",
+        "volume": 98000,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2025-01-15T10:00:00Z",
+        "open": "72.8000",
+        "high": "73.0000",
+        "low": "72.4000",
+        "close": "72.9000",
+        "volume": 110000,
+        "currency": "EGP",
+        "source": "mock"
+      }
+    ],
+    "ETEL": [
+      {
+        "timestamp": "2025-01-13T10:00:00Z",
+        "open": "37.0000",
+        "high": "38.1000",
+        "low": "36.9000",
+        "close": "38.0000",
+        "volume": 45000,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2025-01-14T10:00:00Z",
+        "open": "38.0000",
+        "high": "38.5000",
+        "low": "37.8000",
+        "close": "38.2000",
+        "volume": 52000,
+        "currency": "EGP",
+        "source": "mock"
+      }
+    ],
+    "SWDY": [
+      {
+        "timestamp": "2025-01-15T10:00:00Z",
+        "open": "59.5000",
+        "high": "60.5000",
+        "low": "59.0000",
+        "close": "60.0000",
+        "volume": 76000,
+        "currency": "EGP",
+        "source": "mock"
+      }
+    ]
   },
-  "ETEL": {
-    "price": "38.0000",
-    "currency": "EGP",
-    "source": "mock",
-    "observed_at": "2025-01-15T12:00:00Z"
-  },
-  "SWDY": {
-    "price": "60.0000",
-    "currency": "EGP",
-    "source": "mock",
-    "observed_at": "2025-01-15T12:00:00Z"
+  "history": {
+    "COMI": [
+      {
+        "timestamp": "2023-08-30T10:00:00Z",
+        "open": "49.7150",
+        "high": "50.2708",
+        "low": "49.6034",
+        "close": "50.1333",
+        "volume": 93434,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-08-31T10:00:00Z",
+        "open": "50.3686",
+        "high": "50.9422",
+        "low": "50.1576",
+        "close": "50.8987",
+        "volume": 83905,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-01T10:00:00Z",
+        "open": "50.7383",
+        "high": "51.0393",
+        "low": "49.2388",
+        "close": "49.5194",
+        "volume": 134987,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-04T10:00:00Z",
+        "open": "49.5729",
+        "high": "49.9776",
+        "low": "48.7310",
+        "close": "48.7343",
+        "volume": 100926,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-05T10:00:00Z",
+        "open": "48.6384",
+        "high": "49.3106",
+        "low": "48.1598",
+        "close": "49.2328",
+        "volume": 124118,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-06T10:00:00Z",
+        "open": "49.1608",
+        "high": "49.3403",
+        "low": "47.7954",
+        "close": "47.9674",
+        "volume": 114671,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-07T10:00:00Z",
+        "open": "48.1053",
+        "high": "49.2948",
+        "low": "47.6187",
+        "close": "49.0266",
+        "volume": 129615,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-08T10:00:00Z",
+        "open": "48.9025",
+        "high": "49.2169",
+        "low": "47.1962",
+        "close": "47.6389",
+        "volume": 127400,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-11T10:00:00Z",
+        "open": "47.7617",
+        "high": "48.0167",
+        "low": "47.6477",
+        "close": "47.9937",
+        "volume": 117930,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-12T10:00:00Z",
+        "open": "48.2069",
+        "high": "50.0958",
+        "low": "48.0169",
+        "close": "49.6626",
+        "volume": 139429,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-13T10:00:00Z",
+        "open": "49.5815",
+        "high": "50.1736",
+        "low": "49.4767",
+        "close": "49.9886",
+        "volume": 114993,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-14T10:00:00Z",
+        "open": "50.0987",
+        "high": "50.7398",
+        "low": "49.7812",
+        "close": "50.7041",
+        "volume": 112087,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-15T10:00:00Z",
+        "open": "50.6318",
+        "high": "51.1266",
+        "low": "49.3020",
+        "close": "49.6220",
+        "volume": 108785,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-18T10:00:00Z",
+        "open": "49.8277",
+        "high": "50.7696",
+        "low": "49.7132",
+        "close": "50.3816",
+        "volume": 84207,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-19T10:00:00Z",
+        "open": "50.3223",
+        "high": "51.2705",
+        "low": "49.8657",
+        "close": "51.2374",
+        "volume": 121245,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-20T10:00:00Z",
+        "open": "51.2370",
+        "high": "51.6793",
+        "low": "50.0534",
+        "close": "50.3748",
+        "volume": 98726,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-21T10:00:00Z",
+        "open": "50.2228",
+        "high": "50.5035",
+        "low": "49.3861",
+        "close": "49.5174",
+        "volume": 136155,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-22T10:00:00Z",
+        "open": "49.4571",
+        "high": "50.7602",
+        "low": "48.9583",
+        "close": "50.6506",
+        "volume": 146784,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-25T10:00:00Z",
+        "open": "50.8040",
+        "high": "51.2346",
+        "low": "50.7082",
+        "close": "50.7846",
+        "volume": 100969,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-26T10:00:00Z",
+        "open": "50.7379",
+        "high": "51.6459",
+        "low": "50.5471",
+        "close": "51.6141",
+        "volume": 141348,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-27T10:00:00Z",
+        "open": "51.8968",
+        "high": "52.4145",
+        "low": "51.8910",
+        "close": "51.9841",
+        "volume": 95014,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-28T10:00:00Z",
+        "open": "52.0063",
+        "high": "52.6848",
+        "low": "51.6858",
+        "close": "52.5514",
+        "volume": 94621,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-09-29T10:00:00Z",
+        "open": "52.3463",
+        "high": "52.3479",
+        "low": "51.3658",
+        "close": "51.7268",
+        "volume": 114522,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-02T10:00:00Z",
+        "open": "51.8840",
+        "high": "53.5535",
+        "low": "51.8308",
+        "close": "53.2996",
+        "volume": 119117,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-03T10:00:00Z",
+        "open": "53.3042",
+        "high": "54.4287",
+        "low": "53.1173",
+        "close": "54.3293",
+        "volume": 101174,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-04T10:00:00Z",
+        "open": "54.4964",
+        "high": "54.8797",
+        "low": "54.4961",
+        "close": "54.6146",
+        "volume": 122487,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-05T10:00:00Z",
+        "open": "54.3817",
+        "high": "54.5632",
+        "low": "53.8548",
+        "close": "54.3475",
+        "volume": 120306,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-06T10:00:00Z",
+        "open": "54.1920",
+        "high": "54.4757",
+        "low": "53.3710",
+        "close": "53.4104",
+        "volume": 143699,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-09T10:00:00Z",
+        "open": "53.6972",
+        "high": "54.9116",
+        "low": "53.6343",
+        "close": "54.6452",
+        "volume": 142296,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-10T10:00:00Z",
+        "open": "54.4443",
+        "high": "56.0487",
+        "low": "54.1410",
+        "close": "55.7849",
+        "volume": 107760,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-11T10:00:00Z",
+        "open": "55.9380",
+        "high": "57.5697",
+        "low": "55.5816",
+        "close": "57.2248",
+        "volume": 132296,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-12T10:00:00Z",
+        "open": "57.3147",
+        "high": "59.0192",
+        "low": "57.0559",
+        "close": "58.8001",
+        "volume": 95860,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-13T10:00:00Z",
+        "open": "58.5386",
+        "high": "58.5491",
+        "low": "57.5053",
+        "close": "57.7823",
+        "volume": 108864,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-16T10:00:00Z",
+        "open": "57.9070",
+        "high": "57.9364",
+        "low": "56.3948",
+        "close": "56.4285",
+        "volume": 84117,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-17T10:00:00Z",
+        "open": "56.1711",
+        "high": "57.3690",
+        "low": "55.8366",
+        "close": "57.2500",
+        "volume": 108080,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-18T10:00:00Z",
+        "open": "57.3840",
+        "high": "57.9429",
+        "low": "57.0959",
+        "close": "57.5017",
+        "volume": 111850,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-19T10:00:00Z",
+        "open": "57.6862",
+        "high": "58.6352",
+        "low": "57.6377",
+        "close": "58.5400",
+        "volume": 136498,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-20T10:00:00Z",
+        "open": "58.4867",
+        "high": "58.9186",
+        "low": "58.0225",
+        "close": "58.0496",
+        "volume": 92899,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-23T10:00:00Z",
+        "open": "58.1865",
+        "high": "58.5868",
+        "low": "56.8137",
+        "close": "56.8684",
+        "volume": 105112,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-24T10:00:00Z",
+        "open": "56.8375",
+        "high": "57.0485",
+        "low": "55.7689",
+        "close": "55.9082",
+        "volume": 112742,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-25T10:00:00Z",
+        "open": "55.6534",
+        "high": "57.1809",
+        "low": "55.2254",
+        "close": "56.7768",
+        "volume": 92833,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-26T10:00:00Z",
+        "open": "57.0764",
+        "high": "57.4944",
+        "low": "55.2437",
+        "close": "55.7282",
+        "volume": 110982,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-27T10:00:00Z",
+        "open": "55.7196",
+        "high": "55.8264",
+        "low": "54.5180",
+        "close": "54.7185",
+        "volume": 87685,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-30T10:00:00Z",
+        "open": "54.4198",
+        "high": "54.6150",
+        "low": "52.9504",
+        "close": "53.4137",
+        "volume": 139638,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-10-31T10:00:00Z",
+        "open": "53.5317",
+        "high": "53.8969",
+        "low": "52.4957",
+        "close": "52.8874",
+        "volume": 143788,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-01T10:00:00Z",
+        "open": "52.7654",
+        "high": "53.2498",
+        "low": "51.4402",
+        "close": "51.7298",
+        "volume": 87989,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-02T10:00:00Z",
+        "open": "51.4641",
+        "high": "52.5001",
+        "low": "51.2127",
+        "close": "52.2080",
+        "volume": 149615,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-03T10:00:00Z",
+        "open": "52.4845",
+        "high": "52.5246",
+        "low": "51.3639",
+        "close": "51.4568",
+        "volume": 88907,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-06T10:00:00Z",
+        "open": "51.2979",
+        "high": "51.8835",
+        "low": "50.8528",
+        "close": "51.8236",
+        "volume": 112271,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-07T10:00:00Z",
+        "open": "51.5474",
+        "high": "51.8252",
+        "low": "51.2187",
+        "close": "51.7842",
+        "volume": 148522,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-08T10:00:00Z",
+        "open": "51.6406",
+        "high": "51.9755",
+        "low": "50.9326",
+        "close": "51.0897",
+        "volume": 114814,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-09T10:00:00Z",
+        "open": "51.1928",
+        "high": "51.3428",
+        "low": "50.7220",
+        "close": "50.8801",
+        "volume": 89508,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-10T10:00:00Z",
+        "open": "50.9528",
+        "high": "51.2343",
+        "low": "49.4308",
+        "close": "49.4808",
+        "volume": 107938,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-13T10:00:00Z",
+        "open": "49.2602",
+        "high": "49.4524",
+        "low": "49.2258",
+        "close": "49.2779",
+        "volume": 112018,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-14T10:00:00Z",
+        "open": "49.0725",
+        "high": "49.4894",
+        "low": "48.3293",
+        "close": "48.6811",
+        "volume": 149329,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-15T10:00:00Z",
+        "open": "48.8714",
+        "high": "49.0211",
+        "low": "47.0631",
+        "close": "47.3948",
+        "volume": 97601,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-16T10:00:00Z",
+        "open": "47.6287",
+        "high": "47.9999",
+        "low": "46.8443",
+        "close": "46.9221",
+        "volume": 116930,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-17T10:00:00Z",
+        "open": "47.0526",
+        "high": "47.4689",
+        "low": "46.7355",
+        "close": "47.3671",
+        "volume": 114600,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-20T10:00:00Z",
+        "open": "47.2178",
+        "high": "47.6881",
+        "low": "47.1924",
+        "close": "47.2340",
+        "volume": 135518,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-21T10:00:00Z",
+        "open": "46.9605",
+        "high": "48.1153",
+        "low": "46.8951",
+        "close": "47.9485",
+        "volume": 114335,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-22T10:00:00Z",
+        "open": "47.9136",
+        "high": "48.2665",
+        "low": "46.6179",
+        "close": "46.8984",
+        "volume": 94663,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-23T10:00:00Z",
+        "open": "47.1282",
+        "high": "47.5802",
+        "low": "45.5812",
+        "close": "45.8540",
+        "volume": 128393,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-24T10:00:00Z",
+        "open": "45.6428",
+        "high": "45.9541",
+        "low": "45.4887",
+        "close": "45.8904",
+        "volume": 85229,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-27T10:00:00Z",
+        "open": "45.7164",
+        "high": "47.0379",
+        "low": "45.6650",
+        "close": "46.9132",
+        "volume": 133264,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-28T10:00:00Z",
+        "open": "47.0629",
+        "high": "48.9472",
+        "low": "46.9445",
+        "close": "48.4844",
+        "volume": 101299,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-29T10:00:00Z",
+        "open": "48.6708",
+        "high": "50.5402",
+        "low": "48.6584",
+        "close": "50.0994",
+        "volume": 123540,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-11-30T10:00:00Z",
+        "open": "50.0465",
+        "high": "51.2286",
+        "low": "49.6789",
+        "close": "50.8936",
+        "volume": 112527,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-01T10:00:00Z",
+        "open": "51.0661",
+        "high": "51.1201",
+        "low": "49.9304",
+        "close": "50.3665",
+        "volume": 141694,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-04T10:00:00Z",
+        "open": "50.5564",
+        "high": "50.7866",
+        "low": "49.5711",
+        "close": "49.7237",
+        "volume": 109831,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-05T10:00:00Z",
+        "open": "49.8198",
+        "high": "50.0190",
+        "low": "48.8492",
+        "close": "48.9885",
+        "volume": 89099,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-06T10:00:00Z",
+        "open": "48.8560",
+        "high": "50.5774",
+        "low": "48.6562",
+        "close": "50.2567",
+        "volume": 123404,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-07T10:00:00Z",
+        "open": "50.0259",
+        "high": "51.8288",
+        "low": "49.9366",
+        "close": "51.3436",
+        "volume": 114795,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-08T10:00:00Z",
+        "open": "51.4015",
+        "high": "51.5744",
+        "low": "49.6231",
+        "close": "50.0163",
+        "volume": 137199,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-11T10:00:00Z",
+        "open": "50.0231",
+        "high": "50.5344",
+        "low": "49.7349",
+        "close": "50.3418",
+        "volume": 113386,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-12T10:00:00Z",
+        "open": "50.3034",
+        "high": "50.5634",
+        "low": "48.5333",
+        "close": "48.9366",
+        "volume": 105825,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-13T10:00:00Z",
+        "open": "48.6786",
+        "high": "49.0107",
+        "low": "48.1061",
+        "close": "48.2712",
+        "volume": 121145,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-14T10:00:00Z",
+        "open": "48.0460",
+        "high": "48.9862",
+        "low": "47.7924",
+        "close": "48.5362",
+        "volume": 133528,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-15T10:00:00Z",
+        "open": "48.6545",
+        "high": "48.9317",
+        "low": "48.0371",
+        "close": "48.1330",
+        "volume": 129695,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-18T10:00:00Z",
+        "open": "48.3747",
+        "high": "49.2144",
+        "low": "48.2242",
+        "close": "48.9067",
+        "volume": 80053,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-19T10:00:00Z",
+        "open": "48.7328",
+        "high": "49.1257",
+        "low": "47.8411",
+        "close": "48.1444",
+        "volume": 122237,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-20T10:00:00Z",
+        "open": "48.1097",
+        "high": "48.2165",
+        "low": "47.7681",
+        "close": "48.0047",
+        "volume": 102241,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-21T10:00:00Z",
+        "open": "47.8749",
+        "high": "48.6834",
+        "low": "47.5653",
+        "close": "48.3515",
+        "volume": 92240,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-22T10:00:00Z",
+        "open": "48.5022",
+        "high": "49.7938",
+        "low": "48.3898",
+        "close": "49.4574",
+        "volume": 106100,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-25T10:00:00Z",
+        "open": "49.1852",
+        "high": "49.6771",
+        "low": "47.8216",
+        "close": "48.1272",
+        "volume": 89545,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-26T10:00:00Z",
+        "open": "48.3589",
+        "high": "48.6467",
+        "low": "47.8660",
+        "close": "48.2252",
+        "volume": 130328,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-27T10:00:00Z",
+        "open": "48.0716",
+        "high": "48.3996",
+        "low": "48.0519",
+        "close": "48.0547",
+        "volume": 93970,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-28T10:00:00Z",
+        "open": "47.8860",
+        "high": "49.1233",
+        "low": "47.5380",
+        "close": "48.7212",
+        "volume": 140889,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2023-12-29T10:00:00Z",
+        "open": "48.5708",
+        "high": "48.9949",
+        "low": "46.9932",
+        "close": "47.2214",
+        "volume": 140901,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-01T10:00:00Z",
+        "open": "47.5142",
+        "high": "48.3146",
+        "low": "47.0391",
+        "close": "48.0169",
+        "volume": 138008,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-02T10:00:00Z",
+        "open": "48.1485",
+        "high": "48.7388",
+        "low": "47.7332",
+        "close": "48.4864",
+        "volume": 138446,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-03T10:00:00Z",
+        "open": "48.6326",
+        "high": "50.0616",
+        "low": "48.5030",
+        "close": "49.8242",
+        "volume": 112406,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-04T10:00:00Z",
+        "open": "49.6906",
+        "high": "51.0990",
+        "low": "49.4483",
+        "close": "50.7102",
+        "volume": 111358,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-05T10:00:00Z",
+        "open": "50.4567",
+        "high": "50.5996",
+        "low": "49.6446",
+        "close": "49.7805",
+        "volume": 121904,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-08T10:00:00Z",
+        "open": "49.5288",
+        "high": "50.7833",
+        "low": "49.3373",
+        "close": "50.7079",
+        "volume": 100028,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-09T10:00:00Z",
+        "open": "50.4465",
+        "high": "51.2695",
+        "low": "50.1751",
+        "close": "51.0657",
+        "volume": 134496,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-10T10:00:00Z",
+        "open": "51.2654",
+        "high": "51.4602",
+        "low": "49.5673",
+        "close": "49.9522",
+        "volume": 82560,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-11T10:00:00Z",
+        "open": "50.1116",
+        "high": "51.3720",
+        "low": "50.1086",
+        "close": "51.1818",
+        "volume": 126105,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-12T10:00:00Z",
+        "open": "51.1158",
+        "high": "51.5616",
+        "low": "50.0938",
+        "close": "50.5116",
+        "volume": 108906,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-15T10:00:00Z",
+        "open": "50.3754",
+        "high": "50.6182",
+        "low": "50.1456",
+        "close": "50.3401",
+        "volume": 132994,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-16T10:00:00Z",
+        "open": "50.5444",
+        "high": "51.6767",
+        "low": "50.0540",
+        "close": "51.2169",
+        "volume": 83534,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-17T10:00:00Z",
+        "open": "51.2721",
+        "high": "52.8243",
+        "low": "51.2301",
+        "close": "52.4928",
+        "volume": 136179,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-18T10:00:00Z",
+        "open": "52.4699",
+        "high": "52.4950",
+        "low": "51.1874",
+        "close": "51.3770",
+        "volume": 107742,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-19T10:00:00Z",
+        "open": "51.2795",
+        "high": "51.7193",
+        "low": "51.0044",
+        "close": "51.1436",
+        "volume": 135255,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-22T10:00:00Z",
+        "open": "50.8927",
+        "high": "50.9024",
+        "low": "49.8798",
+        "close": "50.1495",
+        "volume": 125870,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-23T10:00:00Z",
+        "open": "49.8907",
+        "high": "50.3693",
+        "low": "49.0432",
+        "close": "49.0634",
+        "volume": 84067,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-24T10:00:00Z",
+        "open": "48.8830",
+        "high": "50.2420",
+        "low": "48.8068",
+        "close": "50.2318",
+        "volume": 96544,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-25T10:00:00Z",
+        "open": "50.0004",
+        "high": "50.4743",
+        "low": "49.6886",
+        "close": "49.9211",
+        "volume": 113586,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-26T10:00:00Z",
+        "open": "49.7218",
+        "high": "50.8261",
+        "low": "49.3478",
+        "close": "50.5225",
+        "volume": 95012,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-29T10:00:00Z",
+        "open": "50.3208",
+        "high": "51.3096",
+        "low": "50.0314",
+        "close": "51.1541",
+        "volume": 120888,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-30T10:00:00Z",
+        "open": "51.3989",
+        "high": "51.8140",
+        "low": "50.9282",
+        "close": "51.6263",
+        "volume": 105995,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-01-31T10:00:00Z",
+        "open": "51.7407",
+        "high": "52.0543",
+        "low": "50.4177",
+        "close": "50.4687",
+        "volume": 119529,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-01T10:00:00Z",
+        "open": "50.5289",
+        "high": "51.6403",
+        "low": "50.0370",
+        "close": "51.5798",
+        "volume": 85383,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-02T10:00:00Z",
+        "open": "51.5368",
+        "high": "51.7221",
+        "low": "50.8255",
+        "close": "51.0785",
+        "volume": 124725,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-05T10:00:00Z",
+        "open": "51.0305",
+        "high": "51.2756",
+        "low": "49.3517",
+        "close": "49.5684",
+        "volume": 127472,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-06T10:00:00Z",
+        "open": "49.7657",
+        "high": "50.5261",
+        "low": "49.5479",
+        "close": "50.1724",
+        "volume": 148386,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-07T10:00:00Z",
+        "open": "50.0345",
+        "high": "51.8350",
+        "low": "49.7654",
+        "close": "51.4309",
+        "volume": 143372,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-08T10:00:00Z",
+        "open": "51.6263",
+        "high": "51.9226",
+        "low": "51.3598",
+        "close": "51.5210",
+        "volume": 112177,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-09T10:00:00Z",
+        "open": "51.2730",
+        "high": "52.7060",
+        "low": "51.1510",
+        "close": "52.2651",
+        "volume": 140910,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-12T10:00:00Z",
+        "open": "52.3661",
+        "high": "52.7438",
+        "low": "52.1189",
+        "close": "52.5756",
+        "volume": 122600,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-13T10:00:00Z",
+        "open": "52.4029",
+        "high": "52.8018",
+        "low": "51.2782",
+        "close": "51.4484",
+        "volume": 116211,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-14T10:00:00Z",
+        "open": "51.4584",
+        "high": "51.7213",
+        "low": "51.3377",
+        "close": "51.6258",
+        "volume": 133271,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-15T10:00:00Z",
+        "open": "51.7807",
+        "high": "52.1260",
+        "low": "51.4234",
+        "close": "51.7464",
+        "volume": 144332,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-16T10:00:00Z",
+        "open": "51.4567",
+        "high": "51.6038",
+        "low": "51.0991",
+        "close": "51.3013",
+        "volume": 111890,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-19T10:00:00Z",
+        "open": "51.3502",
+        "high": "51.5868",
+        "low": "50.5033",
+        "close": "50.7688",
+        "volume": 135771,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-20T10:00:00Z",
+        "open": "50.7990",
+        "high": "52.4648",
+        "low": "50.5722",
+        "close": "52.2889",
+        "volume": 120189,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-21T10:00:00Z",
+        "open": "52.0613",
+        "high": "52.1576",
+        "low": "51.2558",
+        "close": "51.3155",
+        "volume": 104267,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-22T10:00:00Z",
+        "open": "51.4587",
+        "high": "51.5970",
+        "low": "50.2385",
+        "close": "50.5333",
+        "volume": 148765,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-23T10:00:00Z",
+        "open": "50.8216",
+        "high": "51.5283",
+        "low": "50.6735",
+        "close": "51.1120",
+        "volume": 127301,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-26T10:00:00Z",
+        "open": "50.8205",
+        "high": "51.0876",
+        "low": "49.7217",
+        "close": "49.8588",
+        "volume": 87146,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-27T10:00:00Z",
+        "open": "49.9773",
+        "high": "50.2005",
+        "low": "49.5430",
+        "close": "50.1373",
+        "volume": 144340,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-28T10:00:00Z",
+        "open": "49.8447",
+        "high": "49.9869",
+        "low": "48.4131",
+        "close": "48.6525",
+        "volume": 124657,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-02-29T10:00:00Z",
+        "open": "48.3833",
+        "high": "48.8538",
+        "low": "47.1975",
+        "close": "47.4364",
+        "volume": 88564,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-01T10:00:00Z",
+        "open": "47.1808",
+        "high": "47.4956",
+        "low": "46.8561",
+        "close": "46.8830",
+        "volume": 99555,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-04T10:00:00Z",
+        "open": "47.1524",
+        "high": "48.1284",
+        "low": "47.0283",
+        "close": "48.0859",
+        "volume": 134548,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-05T10:00:00Z",
+        "open": "48.2603",
+        "high": "48.6921",
+        "low": "47.9990",
+        "close": "48.5793",
+        "volume": 139049,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-06T10:00:00Z",
+        "open": "48.4577",
+        "high": "49.9774",
+        "low": "48.2433",
+        "close": "49.6832",
+        "volume": 87894,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-07T10:00:00Z",
+        "open": "49.8272",
+        "high": "50.6299",
+        "low": "49.7233",
+        "close": "50.1561",
+        "volume": 107659,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-08T10:00:00Z",
+        "open": "49.9048",
+        "high": "50.0248",
+        "low": "48.9228",
+        "close": "49.1988",
+        "volume": 100517,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-11T10:00:00Z",
+        "open": "49.1691",
+        "high": "49.4660",
+        "low": "47.5315",
+        "close": "47.6771",
+        "volume": 110340,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-12T10:00:00Z",
+        "open": "47.5467",
+        "high": "47.9765",
+        "low": "46.8755",
+        "close": "46.9111",
+        "volume": 110595,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-13T10:00:00Z",
+        "open": "47.0837",
+        "high": "48.6680",
+        "low": "46.7532",
+        "close": "48.3555",
+        "volume": 105928,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-14T10:00:00Z",
+        "open": "48.3822",
+        "high": "48.7060",
+        "low": "47.7034",
+        "close": "48.1576",
+        "volume": 98643,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-15T10:00:00Z",
+        "open": "47.9572",
+        "high": "48.1110",
+        "low": "46.2969",
+        "close": "46.6714",
+        "volume": 117828,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-18T10:00:00Z",
+        "open": "46.6526",
+        "high": "46.8047",
+        "low": "46.2688",
+        "close": "46.4701",
+        "volume": 115683,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-19T10:00:00Z",
+        "open": "46.4664",
+        "high": "46.5080",
+        "low": "46.4464",
+        "close": "46.4678",
+        "volume": 136626,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-20T10:00:00Z",
+        "open": "46.5300",
+        "high": "47.2466",
+        "low": "46.4156",
+        "close": "47.2336",
+        "volume": 82719,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-21T10:00:00Z",
+        "open": "47.3370",
+        "high": "48.9705",
+        "low": "47.3169",
+        "close": "48.8357",
+        "volume": 102962,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-22T10:00:00Z",
+        "open": "48.9266",
+        "high": "49.3846",
+        "low": "48.7474",
+        "close": "48.8381",
+        "volume": 137132,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-25T10:00:00Z",
+        "open": "48.8332",
+        "high": "49.2831",
+        "low": "48.6592",
+        "close": "49.2375",
+        "volume": 123687,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-26T10:00:00Z",
+        "open": "49.0003",
+        "high": "49.0807",
+        "low": "48.2576",
+        "close": "48.4634",
+        "volume": 144942,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-27T10:00:00Z",
+        "open": "48.7306",
+        "high": "49.1373",
+        "low": "47.8202",
+        "close": "48.0952",
+        "volume": 139614,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-28T10:00:00Z",
+        "open": "47.9466",
+        "high": "48.0046",
+        "low": "46.3246",
+        "close": "46.7108",
+        "volume": 147449,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-03-29T10:00:00Z",
+        "open": "46.4115",
+        "high": "47.8210",
+        "low": "46.1805",
+        "close": "47.3863",
+        "volume": 87104,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-01T10:00:00Z",
+        "open": "47.3034",
+        "high": "47.6816",
+        "low": "46.0534",
+        "close": "46.3661",
+        "volume": 86764,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-02T10:00:00Z",
+        "open": "46.3956",
+        "high": "46.8595",
+        "low": "45.2873",
+        "close": "45.5063",
+        "volume": 143532,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-03T10:00:00Z",
+        "open": "45.7902",
+        "high": "46.0946",
+        "low": "44.5348",
+        "close": "44.6545",
+        "volume": 100758,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-04T10:00:00Z",
+        "open": "44.3627",
+        "high": "44.5667",
+        "low": "43.6826",
+        "close": "43.7949",
+        "volume": 94871,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-05T10:00:00Z",
+        "open": "43.5654",
+        "high": "43.9815",
+        "low": "43.2006",
+        "close": "43.4498",
+        "volume": 118254,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-08T10:00:00Z",
+        "open": "43.3138",
+        "high": "43.7578",
+        "low": "42.8237",
+        "close": "43.3404",
+        "volume": 111946,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-09T10:00:00Z",
+        "open": "43.1272",
+        "high": "43.2225",
+        "low": "42.6979",
+        "close": "42.9976",
+        "volume": 97892,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-10T10:00:00Z",
+        "open": "42.8633",
+        "high": "44.3504",
+        "low": "42.6559",
+        "close": "43.9554",
+        "volume": 146550,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-11T10:00:00Z",
+        "open": "43.6570",
+        "high": "44.0200",
+        "low": "42.5397",
+        "close": "42.9585",
+        "volume": 144178,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-12T10:00:00Z",
+        "open": "42.9264",
+        "high": "44.2643",
+        "low": "42.7602",
+        "close": "44.0222",
+        "volume": 129441,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-15T10:00:00Z",
+        "open": "43.9152",
+        "high": "44.0096",
+        "low": "43.4325",
+        "close": "43.7813",
+        "volume": 130196,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-16T10:00:00Z",
+        "open": "43.9466",
+        "high": "43.9684",
+        "low": "42.7749",
+        "close": "43.1473",
+        "volume": 129968,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-17T10:00:00Z",
+        "open": "43.2455",
+        "high": "43.6559",
+        "low": "42.4133",
+        "close": "42.9037",
+        "volume": 144923,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-18T10:00:00Z",
+        "open": "42.6795",
+        "high": "44.5566",
+        "low": "42.5135",
+        "close": "44.0740",
+        "volume": 93154,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-19T10:00:00Z",
+        "open": "44.0381",
+        "high": "45.4237",
+        "low": "43.8097",
+        "close": "45.1607",
+        "volume": 98894,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-22T10:00:00Z",
+        "open": "45.2536",
+        "high": "45.3308",
+        "low": "44.7488",
+        "close": "44.9835",
+        "volume": 114737,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-23T10:00:00Z",
+        "open": "45.0991",
+        "high": "45.4241",
+        "low": "44.1889",
+        "close": "44.6148",
+        "volume": 149942,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-24T10:00:00Z",
+        "open": "44.5048",
+        "high": "44.8642",
+        "low": "43.7652",
+        "close": "44.1449",
+        "volume": 84705,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-25T10:00:00Z",
+        "open": "43.9857",
+        "high": "44.6803",
+        "low": "43.8420",
+        "close": "44.3381",
+        "volume": 109817,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-26T10:00:00Z",
+        "open": "44.2985",
+        "high": "45.0880",
+        "low": "43.9816",
+        "close": "45.0388",
+        "volume": 93173,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-29T10:00:00Z",
+        "open": "45.1552",
+        "high": "45.6069",
+        "low": "44.9632",
+        "close": "44.9862",
+        "volume": 87355,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-04-30T10:00:00Z",
+        "open": "44.9111",
+        "high": "44.9839",
+        "low": "44.0256",
+        "close": "44.2912",
+        "volume": 103600,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-01T10:00:00Z",
+        "open": "44.0386",
+        "high": "44.4740",
+        "low": "42.7387",
+        "close": "43.0486",
+        "volume": 111566,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-02T10:00:00Z",
+        "open": "43.0984",
+        "high": "43.2145",
+        "low": "42.7725",
+        "close": "43.0914",
+        "volume": 140236,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-03T10:00:00Z",
+        "open": "42.7971",
+        "high": "43.1994",
+        "low": "41.6125",
+        "close": "42.0631",
+        "volume": 100706,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-06T10:00:00Z",
+        "open": "42.3302",
+        "high": "42.8240",
+        "low": "40.9022",
+        "close": "41.0518",
+        "volume": 135615,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-07T10:00:00Z",
+        "open": "41.0259",
+        "high": "41.7479",
+        "low": "40.5262",
+        "close": "41.5968",
+        "volume": 143335,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-08T10:00:00Z",
+        "open": "41.5257",
+        "high": "41.7051",
+        "low": "40.1977",
+        "close": "40.3456",
+        "volume": 118696,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-09T10:00:00Z",
+        "open": "40.5436",
+        "high": "40.7415",
+        "low": "39.1054",
+        "close": "39.1095",
+        "volume": 86428,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-10T10:00:00Z",
+        "open": "39.2566",
+        "high": "40.9048",
+        "low": "38.8051",
+        "close": "40.4884",
+        "volume": 110162,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-13T10:00:00Z",
+        "open": "40.3998",
+        "high": "41.0393",
+        "low": "40.0894",
+        "close": "40.7210",
+        "volume": 97927,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-14T10:00:00Z",
+        "open": "40.9630",
+        "high": "41.6710",
+        "low": "40.8086",
+        "close": "41.3478",
+        "volume": 137779,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-15T10:00:00Z",
+        "open": "41.2667",
+        "high": "41.3324",
+        "low": "39.4120",
+        "close": "39.8668",
+        "volume": 122823,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-16T10:00:00Z",
+        "open": "39.6722",
+        "high": "40.4807",
+        "low": "39.4025",
+        "close": "40.4146",
+        "volume": 127953,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-17T10:00:00Z",
+        "open": "40.6627",
+        "high": "41.1705",
+        "low": "40.5342",
+        "close": "40.7553",
+        "volume": 143156,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-20T10:00:00Z",
+        "open": "40.6324",
+        "high": "42.4697",
+        "low": "40.2302",
+        "close": "42.0345",
+        "volume": 141385,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-21T10:00:00Z",
+        "open": "41.8190",
+        "high": "43.6909",
+        "low": "41.3889",
+        "close": "43.2076",
+        "volume": 132089,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-22T10:00:00Z",
+        "open": "43.3904",
+        "high": "44.9751",
+        "low": "42.9951",
+        "close": "44.7922",
+        "volume": 81824,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-23T10:00:00Z",
+        "open": "44.5664",
+        "high": "44.7507",
+        "low": "43.4852",
+        "close": "43.8597",
+        "volume": 114362,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-24T10:00:00Z",
+        "open": "44.0532",
+        "high": "44.7770",
+        "low": "43.9990",
+        "close": "44.3069",
+        "volume": 110647,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-27T10:00:00Z",
+        "open": "44.3786",
+        "high": "44.8502",
+        "low": "44.1290",
+        "close": "44.2930",
+        "volume": 109015,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-28T10:00:00Z",
+        "open": "44.3743",
+        "high": "45.0494",
+        "low": "44.0237",
+        "close": "44.8172",
+        "volume": 133516,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-29T10:00:00Z",
+        "open": "44.5444",
+        "high": "44.5630",
+        "low": "42.8965",
+        "close": "43.3945",
+        "volume": 95220,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-30T10:00:00Z",
+        "open": "43.6268",
+        "high": "43.6946",
+        "low": "42.1916",
+        "close": "42.4184",
+        "volume": 134935,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-05-31T10:00:00Z",
+        "open": "42.5543",
+        "high": "43.2591",
+        "low": "42.2269",
+        "close": "42.8164",
+        "volume": 144139,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-03T10:00:00Z",
+        "open": "43.0798",
+        "high": "43.5666",
+        "low": "42.7347",
+        "close": "43.4268",
+        "volume": 108477,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-04T10:00:00Z",
+        "open": "43.6971",
+        "high": "44.1248",
+        "low": "43.4776",
+        "close": "43.5272",
+        "volume": 128147,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-05T10:00:00Z",
+        "open": "43.8139",
+        "high": "44.1267",
+        "low": "43.6149",
+        "close": "43.9473",
+        "volume": 104878,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-06T10:00:00Z",
+        "open": "44.2168",
+        "high": "46.0335",
+        "low": "44.1709",
+        "close": "45.6214",
+        "volume": 107801,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-07T10:00:00Z",
+        "open": "45.6797",
+        "high": "46.1155",
+        "low": "45.2863",
+        "close": "46.1048",
+        "volume": 111925,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-10T10:00:00Z",
+        "open": "46.2770",
+        "high": "47.8460",
+        "low": "45.8621",
+        "close": "47.7434",
+        "volume": 107152,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-11T10:00:00Z",
+        "open": "47.9313",
+        "high": "48.3069",
+        "low": "47.5441",
+        "close": "48.1904",
+        "volume": 80371,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-12T10:00:00Z",
+        "open": "48.4808",
+        "high": "48.9746",
+        "low": "47.5425",
+        "close": "47.8126",
+        "volume": 102871,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-13T10:00:00Z",
+        "open": "48.0325",
+        "high": "48.0984",
+        "low": "46.6832",
+        "close": "46.8623",
+        "volume": 111186,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-14T10:00:00Z",
+        "open": "46.5718",
+        "high": "46.9710",
+        "low": "46.5084",
+        "close": "46.8383",
+        "volume": 135176,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-17T10:00:00Z",
+        "open": "46.9857",
+        "high": "47.3021",
+        "low": "46.5967",
+        "close": "47.0640",
+        "volume": 147271,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-18T10:00:00Z",
+        "open": "47.0352",
+        "high": "47.4270",
+        "low": "46.7276",
+        "close": "47.3162",
+        "volume": 148347,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-19T10:00:00Z",
+        "open": "47.4022",
+        "high": "47.4178",
+        "low": "46.3078",
+        "close": "46.8071",
+        "volume": 132640,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-20T10:00:00Z",
+        "open": "46.5718",
+        "high": "46.9280",
+        "low": "46.1289",
+        "close": "46.3507",
+        "volume": 90589,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-21T10:00:00Z",
+        "open": "46.1397",
+        "high": "46.2028",
+        "low": "45.2938",
+        "close": "45.6060",
+        "volume": 122622,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-24T10:00:00Z",
+        "open": "45.6644",
+        "high": "45.8119",
+        "low": "45.0544",
+        "close": "45.3072",
+        "volume": 136387,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-25T10:00:00Z",
+        "open": "45.4282",
+        "high": "45.8546",
+        "low": "43.9003",
+        "close": "44.2258",
+        "volume": 108183,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-26T10:00:00Z",
+        "open": "44.4586",
+        "high": "44.6655",
+        "low": "43.8351",
+        "close": "44.2488",
+        "volume": 132262,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-27T10:00:00Z",
+        "open": "44.0059",
+        "high": "44.2193",
+        "low": "43.4213",
+        "close": "43.7538",
+        "volume": 129060,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-06-28T10:00:00Z",
+        "open": "43.8659",
+        "high": "45.4638",
+        "low": "43.8203",
+        "close": "45.2267",
+        "volume": 91188,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-01T10:00:00Z",
+        "open": "44.9847",
+        "high": "45.3540",
+        "low": "43.3585",
+        "close": "43.7643",
+        "volume": 87861,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-02T10:00:00Z",
+        "open": "43.8013",
+        "high": "44.2255",
+        "low": "43.7402",
+        "close": "44.0607",
+        "volume": 126346,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-03T10:00:00Z",
+        "open": "44.3254",
+        "high": "45.6577",
+        "low": "43.8674",
+        "close": "45.4462",
+        "volume": 86743,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-04T10:00:00Z",
+        "open": "45.5064",
+        "high": "47.0875",
+        "low": "45.2175",
+        "close": "46.9116",
+        "volume": 107884,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-05T10:00:00Z",
+        "open": "46.9009",
+        "high": "47.3246",
+        "low": "45.6901",
+        "close": "45.8651",
+        "volume": 128176,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-08T10:00:00Z",
+        "open": "45.7323",
+        "high": "45.8454",
+        "low": "44.3624",
+        "close": "44.5769",
+        "volume": 83441,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-09T10:00:00Z",
+        "open": "44.6716",
+        "high": "45.3454",
+        "low": "44.6572",
+        "close": "44.9986",
+        "volume": 115818,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-10T10:00:00Z",
+        "open": "44.8840",
+        "high": "45.6620",
+        "low": "44.8810",
+        "close": "45.4921",
+        "volume": 98776,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-11T10:00:00Z",
+        "open": "45.4326",
+        "high": "45.7025",
+        "low": "45.1160",
+        "close": "45.6315",
+        "volume": 84018,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-12T10:00:00Z",
+        "open": "45.6498",
+        "high": "45.8379",
+        "low": "44.1983",
+        "close": "44.4251",
+        "volume": 100631,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-15T10:00:00Z",
+        "open": "44.5581",
+        "high": "44.9465",
+        "low": "43.8844",
+        "close": "44.1682",
+        "volume": 91135,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-16T10:00:00Z",
+        "open": "43.9616",
+        "high": "45.4888",
+        "low": "43.9367",
+        "close": "45.1116",
+        "volume": 90693,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-17T10:00:00Z",
+        "open": "45.2088",
+        "high": "45.4516",
+        "low": "44.3040",
+        "close": "44.5251",
+        "volume": 115804,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-18T10:00:00Z",
+        "open": "44.5325",
+        "high": "44.7051",
+        "low": "43.6237",
+        "close": "43.6792",
+        "volume": 143783,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-19T10:00:00Z",
+        "open": "43.5642",
+        "high": "43.7553",
+        "low": "43.0720",
+        "close": "43.6450",
+        "volume": 87180,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-22T10:00:00Z",
+        "open": "43.5259",
+        "high": "43.6315",
+        "low": "41.9803",
+        "close": "42.0489",
+        "volume": 113491,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-23T10:00:00Z",
+        "open": "41.8209",
+        "high": "42.0696",
+        "low": "40.9739",
+        "close": "41.1893",
+        "volume": 96932,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-24T10:00:00Z",
+        "open": "41.3115",
+        "high": "41.5616",
+        "low": "40.5354",
+        "close": "40.9521",
+        "volume": 126421,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-25T10:00:00Z",
+        "open": "41.1692",
+        "high": "41.1903",
+        "low": "39.8760",
+        "close": "39.8854",
+        "volume": 90205,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-26T10:00:00Z",
+        "open": "39.9308",
+        "high": "41.3039",
+        "low": "39.5761",
+        "close": "41.0172",
+        "volume": 134747,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-29T10:00:00Z",
+        "open": "40.9602",
+        "high": "41.4433",
+        "low": "40.2428",
+        "close": "40.3287",
+        "volume": 140305,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-30T10:00:00Z",
+        "open": "40.5806",
+        "high": "41.6207",
+        "low": "40.1584",
+        "close": "41.5767",
+        "volume": 111891,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-07-31T10:00:00Z",
+        "open": "41.5169",
+        "high": "41.5563",
+        "low": "40.8887",
+        "close": "41.3240",
+        "volume": 124500,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-01T10:00:00Z",
+        "open": "41.4914",
+        "high": "41.5296",
+        "low": "40.3395",
+        "close": "40.6562",
+        "volume": 149547,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-02T10:00:00Z",
+        "open": "40.8997",
+        "high": "41.1043",
+        "low": "40.5360",
+        "close": "40.9296",
+        "volume": 99358,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-05T10:00:00Z",
+        "open": "40.7174",
+        "high": "40.8161",
+        "low": "39.6250",
+        "close": "39.9262",
+        "volume": 89876,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-06T10:00:00Z",
+        "open": "40.0900",
+        "high": "40.3370",
+        "low": "38.7442",
+        "close": "39.1214",
+        "volume": 138838,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-07T10:00:00Z",
+        "open": "39.3506",
+        "high": "40.2155",
+        "low": "38.8574",
+        "close": "39.8940",
+        "volume": 122363,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-08T10:00:00Z",
+        "open": "39.9704",
+        "high": "41.1386",
+        "low": "39.9362",
+        "close": "41.0631",
+        "volume": 137961,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-09T10:00:00Z",
+        "open": "41.2409",
+        "high": "41.9308",
+        "low": "41.0649",
+        "close": "41.6350",
+        "volume": 89724,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-12T10:00:00Z",
+        "open": "41.6062",
+        "high": "41.6346",
+        "low": "40.6216",
+        "close": "41.0374",
+        "volume": 90057,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-13T10:00:00Z",
+        "open": "41.3238",
+        "high": "41.8030",
+        "low": "41.0268",
+        "close": "41.7578",
+        "volume": 130394,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-14T10:00:00Z",
+        "open": "41.7904",
+        "high": "42.1863",
+        "low": "41.2306",
+        "close": "41.6786",
+        "volume": 138947,
+        "currency": "EGP",
+        "source": "mock"
+      },
+      {
+        "timestamp": "2024-08-15T10:00:00Z",
+        "open": "41.7216",
+        "high": "43.0428",
+        "low": "41.4191",
+        "close": "42.9487",
+        "volume": 145715,
+        "currency": "EGP",
+        "source": "mock"
+      }
+    ]
   }
 }

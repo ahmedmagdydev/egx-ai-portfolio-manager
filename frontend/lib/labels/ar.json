@@ -1,0 +1,28 @@
+{
+  "recommendations": {
+    "BUY": "شراء",
+    "ACCUMULATE": "تراكم",
+    "HOLD": "احتفاظ",
+    "REDUCE": "تقليل",
+    "SELL": "بيع",
+    "WATCH": "مراقبة"
+  },
+  "assessments": {
+    "ATTRACTIVE": "جذاب",
+    "FAIR": "عادل",
+    "RICH": "مرتفع",
+    "POSITIVE": "إيجابي",
+    "NEUTRAL": "محايد",
+    "NEGATIVE": "سلبي",
+    "BULLISH": "صعودي",
+    "BEARISH": "هبوطي",
+    "INSUFFICIENT_DATA": "بيانات غير كافية",
+    "FIT": "مناسب",
+    "OVERWEIGHT": "وزن زائد",
+    "HIGH_CONCENTRATION": "تركيز مرتفع",
+    "UNDERWEIGHT": "وزن ناقص",
+    "NO_POSITION": "لا يوجد مركز"
+  },
+  "currency": "ج.م",
+  "dateFormat": "DD/MM/YYYY"
+}

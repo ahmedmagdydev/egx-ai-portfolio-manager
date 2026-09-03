@@ -1,0 +1,14 @@
+{
+  "position_concentration": "تركيز المركز",
+  "sector_exposure": "تعرض القطاع",
+  "cash_percentage": "نسبة النقد",
+  "portfolio_volatility": "تقلب المحفظة",
+  "maximum_drawdown": "أقصى انخفاض",
+  "beta": "بيتا",
+  "sharpe_ratio": "نسبة شارب",
+  "correlation": "الارتباط",
+  "critical": "خطر",
+  "warning": "تنبيه",
+  "severity_critical": "CRITICAL",
+  "severity_warning": "WARNING"
+}

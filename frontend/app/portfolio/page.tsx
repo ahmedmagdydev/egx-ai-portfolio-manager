@@ -8,10 +8,12 @@ import {
   ApiError,
   HoldingsResponse,
   Stock,
+  Transaction,
   TransactionInput,
   TransactionPage,
   createStock,
   createTransaction,
+  deleteTransaction,
   getAllocation,
   getHoldings,
   isApiUnavailable,
@@ -53,7 +55,9 @@ export default function PortfolioPage() {
   const [stocks, setStocks] = useState<Stock[]>([]);
   const [portfolio, setPortfolio] = useState<HoldingsResponse | null>(null);
   const [allocation, setAllocation] = useState<AllocationResponse | null>(null);
-  const [transactions, setTransactions] = useState<TransactionPage | null>(null);
+  const [transactions, setTransactions] = useState<TransactionPage | null>(
+    null,
+  );
   const [loading, setLoading] = useState(true);
   const [networkError, setNetworkError] = useState(false);
   const [formError, setFormError] = useState("");
@@ -64,7 +68,8 @@ export default function PortfolioPage() {
   const [transaction, setTransaction] = useState(initialTransaction);
 
   const label = (key: string) => t(locale, key);
-  const money = (value: string | null) => (value === null ? "—" : formatMoney(value, locale));
+  const money = (value: string | null) =>
+    value === null ? "—" : formatMoney(value, locale);
   const numeric = (value: string | null) => (
     <span dir="ltr">{money(value)}</span>
   );
@@ -72,12 +77,13 @@ export default function PortfolioPage() {
   const loadData = useCallback(async () => {
     setLoading(true);
     try {
-      const [stockData, holdingData, allocationData, transactionData] = await Promise.all([
-        listStocks(),
-        getHoldings(),
-        getAllocation(),
-        listTransactions({ limit: 20 }),
-      ]);
+      const [stockData, holdingData, allocationData, transactionData] =
+        await Promise.all([
+          listStocks(),
+          getHoldings(),
+          getAllocation(),
+          listTransactions({ limit: 20 }),
+        ]);
       setStocks(stockData);
       setPortfolio(holdingData);
       setAllocation(allocationData);
@@ -96,7 +102,11 @@ export default function PortfolioPage() {
   }, [loadData]);
 
   useEffect(() => {
-    setLocale(normalizeLocale(new URLSearchParams(window.location.search).get("lang") || "en"));
+    setLocale(
+      normalizeLocale(
+        new URLSearchParams(window.location.search).get("lang") || "en",
+      ),
+    );
   }, []);
 
   useEffect(() => {
@@ -155,10 +165,23 @@ export default function PortfolioPage() {
     setTransaction((current) => ({ ...current, [field]: value }));
   }
 
-  const typeNeedsStock = transaction.type === "BUY"
-    || transaction.type === "SELL"
-    || transaction.type === "DIVIDEND";
-  const typeNeedsTradeFields = transaction.type === "BUY" || transaction.type === "SELL";
+  async function removeTransaction(item: Transaction) {
+    if (!window.confirm(label("Delete") + " " + item.id + "?")) return;
+    setFormError("");
+    try {
+      await deleteTransaction(item.id);
+      await loadData();
+    } catch (error) {
+      setFormError(errorMessage(error));
+    }
+  }
+
+  const typeNeedsStock =
+    transaction.type === "BUY" ||
+    transaction.type === "SELL" ||
+    transaction.type === "DIVIDEND";
+  const typeNeedsTradeFields =
+    transaction.type === "BUY" || transaction.type === "SELL";
 
   if (networkError && !portfolio) {
     return (
@@ -167,7 +190,9 @@ export default function PortfolioPage() {
           <header className={styles.header}>
             <Link href="/">{label("EGX AI Portfolio Manager")}</Link>
             <a href={`/portfolio?lang=${locale === "ar" ? "en" : "ar"}`}>
-              {label(locale === "ar" ? "Language: English" : "Language: Arabic")}
+              {label(
+                locale === "ar" ? "Language: English" : "Language: Arabic",
+              )}
             </a>
           </header>
           <section className={styles.alert} role="alert">
@@ -183,7 +208,9 @@ export default function PortfolioPage() {
     <main className={styles.page} lang={locale} dir={direction(locale)}>
       <div className={styles.shell}>
         <header className={styles.header}>
-          <Link className={styles.brand} href="/">EGX AI Portfolio Manager</Link>
+          <Link className={styles.brand} href="/">
+            EGX AI Portfolio Manager
+          </Link>
           <a href={`/portfolio?lang=${locale === "ar" ? "en" : "ar"}`}>
             {label(locale === "ar" ? "Language: English" : "Language: Arabic")}
           </a>
@@ -196,12 +223,17 @@ export default function PortfolioPage() {
           </div>
           {portfolio && (
             <p className={styles.asOf}>
-              {label("Data as of")}: <span dir="ltr">{formatDate(portfolio.data_as_of, locale)}</span>
+              {label("Data as of")}:{" "}
+              <span dir="ltr">{formatDate(portfolio.data_as_of, locale)}</span>
             </p>
           )}
         </div>
 
-        {formError && <p className={styles.formError} role="alert">{formError}</p>}
+        {formError && (
+          <p className={styles.formError} role="alert">
+            {formError}
+          </p>
+        )}
         {loading && <p className={styles.loading}>Loading…</p>}
 
         {portfolio && (
@@ -215,11 +247,18 @@ export default function PortfolioPage() {
                   [label("Total cost"), portfolio.summary.total_cost],
                   [label("Unrealized P&L"), portfolio.summary.unrealized_pnl],
                   [label("Realized P&L"), portfolio.summary.realized_pnl],
-                  [label("Unpriced count"), String(portfolio.summary.unpriced_count)],
+                  [
+                    label("Unpriced count"),
+                    String(portfolio.summary.unpriced_count),
+                  ],
                 ].map(([name, value]) => (
                   <div className={styles.summaryCard} key={name}>
                     <span>{name}</span>
-                    <strong>{name === label("Unpriced count") ? value : numeric(value)}</strong>
+                    <strong>
+                      {name === label("Unpriced count")
+                        ? value
+                        : numeric(value)}
+                    </strong>
                   </div>
                 ))}
               </div>
@@ -243,20 +282,31 @@ export default function PortfolioPage() {
                   <tbody>
                     {portfolio.holdings.map((holding) => (
                       <tr key={holding.symbol}>
-                        <td><strong>{holding.symbol}</strong></td>
+                        <td>
+                          <strong>{holding.symbol}</strong>
+                        </td>
                         <td>{numeric(holding.quantity)}</td>
                         <td>{numeric(holding.avg_cost)}</td>
                         <td>
                           {holding.price.status === "unavailable" ? (
-                            <span className={styles.unavailable}>{label("Price unavailable")}</span>
+                            <span className={styles.unavailable}>
+                              {label("Price unavailable")}
+                            </span>
                           ) : (
                             <span className={styles.priceCell}>
                               {numeric(holding.price.value)}
                               <small>
-                                <span className={`${styles.badge} ${styles[holding.price.status]}`}>
-                                  {label(holding.price.status === "fresh" ? "Fresh" : "Stale")}
+                                <span
+                                  className={`${styles.badge} ${styles[holding.price.status]}`}
+                                >
+                                  {label(
+                                    holding.price.status === "fresh"
+                                      ? "Fresh"
+                                      : "Stale",
+                                  )}
                                 </span>
-                                {holding.price.source} · {formatDate(holding.price.observed_at, locale)}
+                                {holding.price.source} ·{" "}
+                                {formatDate(holding.price.observed_at, locale)}
                               </small>
                             </span>
                           )}
@@ -279,16 +329,48 @@ export default function PortfolioPage() {
             <div className={styles.tableWrap}>
               <table>
                 <thead>
-                  <tr><th>{label("Symbol")}</th><th>{label("Sector")}</th><th>{label("Market value")}</th><th>{label("Weight")}</th></tr>
+                  <tr>
+                    <th>{label("Symbol")}</th>
+                    <th>{label("Sector")}</th>
+                    <th>{label("Market value")}</th>
+                    <th>{label("Weight")}</th>
+                  </tr>
                 </thead>
                 <tbody>
                   {allocation.by_symbol.map((line) => (
-                    <tr key={`symbol-${line.name}`}><td>{line.name}</td><td>{label("Holdings")}</td><td>{numeric(line.value)}</td><td><span dir="ltr">{formatPercent(line.weight, locale)}%</span></td></tr>
+                    <tr key={`symbol-${line.name}`}>
+                      <td>{line.name}</td>
+                      <td>{label("Holdings")}</td>
+                      <td>{numeric(line.value)}</td>
+                      <td>
+                        <span dir="ltr">
+                          {formatPercent(line.weight, locale)}%
+                        </span>
+                      </td>
+                    </tr>
                   ))}
                   {allocation.by_sector.map((line) => (
-                    <tr key={`sector-${line.name}`}><td>{line.name}</td><td>{label("Sector")}</td><td>{numeric(line.value)}</td><td><span dir="ltr">{formatPercent(line.weight, locale)}%</span></td></tr>
+                    <tr key={`sector-${line.name}`}>
+                      <td>{line.name}</td>
+                      <td>{label("Sector")}</td>
+                      <td>{numeric(line.value)}</td>
+                      <td>
+                        <span dir="ltr">
+                          {formatPercent(line.weight, locale)}%
+                        </span>
+                      </td>
+                    </tr>
                   ))}
-                  <tr><td>{allocation.cash.name}</td><td>{label("Cash")}</td><td>{numeric(allocation.cash.value)}</td><td><span dir="ltr">{formatPercent(allocation.cash.weight, locale)}%</span></td></tr>
+                  <tr>
+                    <td>{allocation.cash.name}</td>
+                    <td>{label("Cash")}</td>
+                    <td>{numeric(allocation.cash.value)}</td>
+                    <td>
+                      <span dir="ltr">
+                        {formatPercent(allocation.cash.weight, locale)}%
+                      </span>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -301,16 +383,37 @@ export default function PortfolioPage() {
             <div className={styles.tableWrap}>
               <table>
                 <thead>
-                  <tr><th>{label("Type")}</th><th>{label("Symbol")}</th><th>{label("Quantity")}</th><th>{label("Amount")}</th><th>{label("Executed at")}</th></tr>
+                  <tr>
+                    <th>{label("Type")}</th>
+                    <th>{label("Symbol")}</th>
+                    <th>{label("Quantity")}</th>
+                    <th>{label("Amount")}</th>
+                    <th>{label("Executed at")}</th>
+                    <th></th>
+                  </tr>
                 </thead>
                 <tbody>
                   {[...transactions.items].reverse().map((item) => (
                     <tr key={item.id}>
-                      <td><strong>{item.type}</strong></td>
+                      <td>
+                        <strong>{item.type}</strong>
+                      </td>
                       <td>{item.symbol || "—"}</td>
                       <td>{numeric(item.quantity)}</td>
                       <td>{numeric(item.amount || item.price)}</td>
-                      <td><span dir="ltr">{formatDate(item.executed_at, locale)}</span></td>
+                      <td>
+                        <span dir="ltr">
+                          {formatDate(item.executed_at, locale)}
+                        </span>
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          onClick={() => removeTransaction(item)}
+                        >
+                          {label("Delete")}
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -323,10 +426,36 @@ export default function PortfolioPage() {
           <section className={styles.section}>
             <h2>{label("Add stock")}</h2>
             <form onSubmit={submitStock} className={styles.form}>
-              <label>{label("Symbol")}<input required value={stockSymbol} onChange={(event) => setStockSymbol(event.target.value)} /></label>
-              <label>{label("Name (English)")}<input required value={stockName} onChange={(event) => setStockName(event.target.value)} /></label>
-              <label>{label("Name (Arabic)")}<input value={stockNameAr} onChange={(event) => setStockNameAr(event.target.value)} /></label>
-              <label>{label("Sector")}<input value={stockSector} onChange={(event) => setStockSector(event.target.value)} /></label>
+              <label>
+                {label("Symbol")}
+                <input
+                  required
+                  value={stockSymbol}
+                  onChange={(event) => setStockSymbol(event.target.value)}
+                />
+              </label>
+              <label>
+                {label("Name (English)")}
+                <input
+                  required
+                  value={stockName}
+                  onChange={(event) => setStockName(event.target.value)}
+                />
+              </label>
+              <label>
+                {label("Name (Arabic)")}
+                <input
+                  value={stockNameAr}
+                  onChange={(event) => setStockNameAr(event.target.value)}
+                />
+              </label>
+              <label>
+                {label("Sector")}
+                <input
+                  value={stockSector}
+                  onChange={(event) => setStockSector(event.target.value)}
+                />
+              </label>
               <button type="submit">{label("Submit")}</button>
             </form>
           </section>
@@ -334,8 +463,14 @@ export default function PortfolioPage() {
           <section className={styles.section}>
             <h2>{label("Add transaction")}</h2>
             <form onSubmit={submitTransaction} className={styles.form}>
-              <label>{label("Type")}
-                <select value={transaction.type} onChange={(event) => updateTransaction("type", event.target.value)}>
+              <label>
+                {label("Type")}
+                <select
+                  value={transaction.type}
+                  onChange={(event) =>
+                    updateTransaction("type", event.target.value)
+                  }
+                >
                   <option value="BUY">BUY</option>
                   <option value="SELL">SELL</option>
                   <option value="DEPOSIT">DEPOSIT</option>
@@ -344,22 +479,93 @@ export default function PortfolioPage() {
                 </select>
               </label>
               {typeNeedsStock && (
-                <label>{label("Symbol")}
-                  <input required value={transaction.symbol} list="portfolio-stocks" onChange={(event) => updateTransaction("symbol", event.target.value)} />
-                  <datalist id="portfolio-stocks">{stocks.map((stock) => <option key={stock.symbol} value={stock.symbol} />)}</datalist>
+                <label>
+                  {label("Symbol")}
+                  <input
+                    required
+                    value={transaction.symbol}
+                    list="portfolio-stocks"
+                    onChange={(event) =>
+                      updateTransaction("symbol", event.target.value)
+                    }
+                  />
+                  <datalist id="portfolio-stocks">
+                    {stocks.map((stock) => (
+                      <option key={stock.symbol} value={stock.symbol} />
+                    ))}
+                  </datalist>
                 </label>
               )}
               {typeNeedsTradeFields && (
                 <>
-                  <label>{label("Quantity")}<input required type="number" step="0.0001" min="0" value={transaction.quantity} onChange={(event) => updateTransaction("quantity", event.target.value)} /></label>
-                  <label>{label("Price")}<input required type="number" step="0.0001" min="0" value={transaction.price} onChange={(event) => updateTransaction("price", event.target.value)} /></label>
-                  <label>{label("Fees")}<input type="number" step="0.01" min="0" value={transaction.fees} onChange={(event) => updateTransaction("fees", event.target.value)} /></label>
+                  <label>
+                    {label("Quantity")}
+                    <input
+                      required
+                      type="number"
+                      step="0.0001"
+                      min="0"
+                      value={transaction.quantity}
+                      onChange={(event) =>
+                        updateTransaction("quantity", event.target.value)
+                      }
+                    />
+                  </label>
+                  <label>
+                    {label("Price")}
+                    <input
+                      required
+                      type="number"
+                      step="0.0001"
+                      min="0"
+                      value={transaction.price}
+                      onChange={(event) =>
+                        updateTransaction("price", event.target.value)
+                      }
+                    />
+                  </label>
+                  <label>
+                    {label("Fees")}
+                    <input
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      value={transaction.fees}
+                      onChange={(event) =>
+                        updateTransaction("fees", event.target.value)
+                      }
+                    />
+                  </label>
                 </>
               )}
-              {(transaction.type === "DEPOSIT" || transaction.type === "WITHDRAWAL" || transaction.type === "DIVIDEND") && (
-                <label>{label("Amount")}<input required type="number" step="0.01" min="0" value={transaction.amount} onChange={(event) => updateTransaction("amount", event.target.value)} /></label>
+              {(transaction.type === "DEPOSIT" ||
+                transaction.type === "WITHDRAWAL" ||
+                transaction.type === "DIVIDEND") && (
+                <label>
+                  {label("Amount")}
+                  <input
+                    required
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={transaction.amount}
+                    onChange={(event) =>
+                      updateTransaction("amount", event.target.value)
+                    }
+                  />
+                </label>
               )}
-              <label>{label("Executed at")}<input required type="datetime-local" value={transaction.executed_at} onChange={(event) => updateTransaction("executed_at", event.target.value)} /></label>
+              <label>
+                {label("Executed at")}
+                <input
+                  required
+                  type="datetime-local"
+                  value={transaction.executed_at}
+                  onChange={(event) =>
+                    updateTransaction("executed_at", event.target.value)
+                  }
+                />
+              </label>
               <button type="submit">{label("Submit")}</button>
             </form>
           </section>
