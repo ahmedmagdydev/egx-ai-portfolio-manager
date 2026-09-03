@@ -15,6 +15,7 @@ export default async function Home() {
           <p className={styles.eyebrow}>Phase 00 · Local bootstrap</p>
           <h1>EGX AI Portfolio Manager</h1>
           <p className={styles.intro}>API status is available from the local FastAPI service.</p>
+          <p><a href="/portfolio?lang=en">Open portfolio</a></p>
           <dl className={styles.status}>
             <div><dt>Status</dt><dd>{live.status}</dd></div>
             <div><dt>Service</dt><dd>{live.service}</dd></div>
